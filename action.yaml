@@ -1,4 +1,4 @@
-name: push-to-gitee
+name: push-to-gitee-action
 description: Sync only selected files (via glob pattern) to a Gitee repo using Git over SSH.
 
 inputs:
