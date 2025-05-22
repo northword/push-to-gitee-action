@@ -28,5 +28,5 @@ jobs:
         with:
           gitee_repo: git@gitee.com:zotero-chinese-x/styles.git
           gitee_token: ${{ secrets.SSH_PRIVATE_KEY }}
-          files: ['**/*.csl']
+          files: '**/*.csl'
 ```
