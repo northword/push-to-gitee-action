@@ -2,5 +2,10 @@ import { defineConfig } from 'tsdown'
 
 export default defineConfig({
   entry: 'src/index.ts',
-  noExternal: ['fs-extra', 'tinyglobby', 'tinyexec'],
+  noExternal: [
+    'fs-extra',
+    'tinyglobby',
+    'tinyexec',
+    '@actions/core',
+  ],
 })
