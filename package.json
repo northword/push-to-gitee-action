@@ -12,7 +12,6 @@
     "build": "tsdown",
     "lint:fix": "eslint . --fix",
     "lint:check": "eslint .",
-    "release": "bumpp",
     "test": "vitest"
   },
   "dependencies": {
@@ -26,7 +25,6 @@
     "@tsconfig/node20": "20.1.5",
     "@types/fs-extra": "^11.0.4",
     "@types/node": "20.17.50",
-    "bumpp": "^10.1.1",
     "eslint": "9.27.0",
     "pnpm": "10.11.0",
     "prettier": "3.5.3",
