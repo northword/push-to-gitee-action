@@ -1,0 +1,17 @@
+name: push-to-gitee
+description: Sync only selected files (via glob pattern) to a Gitee repo using Git over SSH.
+
+inputs:
+  gitee_repo:
+    description: Gitee 仓库地址, SSH 模式
+    required: true
+  gitee_token:
+    description: 有权访问目标 Gitee 仓库的 SSH 私钥
+    required: true
+  files:
+    description: 需要提交的文件
+    required: true
+
+runs:
+  using: node20
+  main: dist/index.js

@@ -1,0 +1,33 @@
+{
+  "type": "module",
+  "private": true,
+  "packageManager": "pnpm@10.11.0",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "dev": "tsdown --watch",
+    "build": "tsdown",
+    "lint:fix": "eslint . --fix",
+    "lint:check": "eslint .",
+    "test": "vitest"
+  },
+  "dependencies": {
+    "@actions/core": "1.11.1",
+    "fs-extra": "^11.3.0",
+    "tinyexec": "^1.0.1",
+    "tinyglobby": "^0.2.13"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^4.13.2",
+    "@tsconfig/node20": "20.1.5",
+    "@types/fs-extra": "^11.0.4",
+    "@types/node": "20.17.50",
+    "eslint": "9.27.0",
+    "pnpm": "10.11.0",
+    "prettier": "3.5.3",
+    "tsdown": "^0.12.1",
+    "typescript": "5.8.3",
+    "vitest": "3.1.4"
+  }
+}
