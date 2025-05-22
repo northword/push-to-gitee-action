@@ -44,8 +44,6 @@ export async function main() {
   endGroup()
 
   startGroup('执行 Git')
-  await exec('git', ['config', 'user.name', 'github-actions'], { throwOnError: true })
-  await exec('git', ['config', 'user.email', 'github-actions@github.com'], { throwOnError: true })
   // 获取当前仓库信息
   const { stdout: hash } = await exec('git', ['rev-parse', 'HEAD'])
   const commitMsg = `Mirror from GitHub for ${hash.trim()} at ${nowDate()}`
@@ -53,6 +51,8 @@ export async function main() {
   // 创建仓库并推送到 Gitee
   process.chdir(TEMP_DIR)
   await exec('git', ['init'], { throwOnError: true })
+  await exec('git', ['config', 'user.name', 'github-actions'], { throwOnError: true })
+  await exec('git', ['config', 'user.email', 'github-actions@github.com'], { throwOnError: true })
   await exec('git', ['remote', 'add', 'origin', giteeRepo], { throwOnError: true })
   await exec('git', ['add', '.'], { throwOnError: true })
   await exec('git', ['commit', '-m', commitMsg], { throwOnError: true })
