@@ -1,4 +1,7 @@
 {
+  // Actions modify major tag, so we need replace local tags with remote tags
+  "git.replaceTagsWhenPull": true,
+
   // Disable the default formatter, use eslint instead
   "prettier.enable": false,
   "editor.formatOnSave": false,
