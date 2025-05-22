@@ -44,8 +44,8 @@ export async function main() {
   endGroup()
 
   startGroup('执行 Git')
-  await exec('git', ['config', 'user.name', 'github-actions'])
-  await exec('git', ['config', 'user.email', 'github-actions@github.com'])
+  await exec('git', ['config', 'user.name', 'github-actions'], { throwOnError: true })
+  await exec('git', ['config', 'user.email', 'github-actions@github.com'], { throwOnError: true })
   // 获取当前仓库信息
   const { stdout: hash } = await exec('git', ['rev-parse', 'HEAD'])
   const commitMsg = `Mirror from GitHub for ${hash.trim()} at ${nowDate()}`
