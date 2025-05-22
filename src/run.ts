@@ -39,7 +39,7 @@ export async function main() {
   const sshPath = path.join(process.env.HOME || process.cwd(), '.ssh')
   const keyPath = path.join(sshPath, 'id_rsa')
   debug('写入 .ssh/id_rsa')
-  outputFileSync(keyPath, `${sshKey}\n`)
+  outputFileSync(keyPath, `${sshKey}\n`, { mode: 0o600 })
   process.env.GIT_SSH_COMMAND = `ssh -i ${keyPath} -o StrictHostKeyChecking=no`
   endGroup()
 
