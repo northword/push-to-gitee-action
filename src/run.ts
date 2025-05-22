@@ -46,7 +46,7 @@ export async function main() {
   startGroup('执行 Git')
   // 获取当前仓库信息
   const { stdout: hash } = await exec('git', ['rev-parse', 'HEAD'])
-  const commitMsg = `Mirror from GitHub for ${hash.trim()} at ${nowDate()}`
+  const commitMsg = `Mirror from GitHub for ${hash.trim().slice(0, 6)} at ${nowDate()}`
 
   // 创建仓库并推送到 Gitee
   process.chdir(TEMP_DIR)
